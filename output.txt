@@ -1,0 +1,27 @@
+Name: SEP223456654331 Model: Cisco Webex DX80
+Name: SEP123455432165 Model: Cisco IP Communicator
+Name: SEP123456654320 Model: Cisco 8861
+Name: SEP123456654329 Model: Cisco 8851
+Name: SEP123456654321 Model: Cisco TelePresence EX60
+Name: SEP223456654321 Model: Cisco TelePresence EX60
+Name: SEP123456654327 Model: Cisco 8865
+Name: SEP223456654325 Model: Cisco DX80
+Name: SEP223456654320 Model: Cisco 8861
+Name: SEP123456654328 Model: Cisco 8841
+Name: SEP123456654324 Model: Cisco DX70
+Name: SEP223456654330 Model: Cisco TelePresence DX70
+Name: SEP123455432166 Model: Cisco IP Communicator
+Name: SEP223456654322 Model: Cisco TelePresence EX90
+Name: SEP223456654324 Model: Cisco DX70
+Name: SEP123456654322 Model: Cisco TelePresence EX90
+Name: SEP223456654323 Model: Cisco DX650
+Name: SEP123455432167 Model: Cisco IP Communicator
+Name: SEP223456654328 Model: Cisco 8841
+Name: SEP123456654325 Model: Cisco DX80
+Name: SEP223456654326 Model: Cisco 8845
+Name: SEP123456654330 Model: Cisco TelePresence DX70
+Name: SEP223456654329 Model: Cisco 8851
+Name: SEP223456654327 Model: Cisco 8865
+Name: SEP123456654326 Model: Cisco 8845
+Name: SEP123456654323 Model: Cisco DX650
+Name: SEP123456654331 Model: Cisco Webex DX80
