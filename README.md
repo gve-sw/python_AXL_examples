@@ -3,10 +3,9 @@
 
  # first thing you’re going to need:
  - Python (I use v3.6)
- - AXLSQLToolkit (Download from your CUCM Plugins page)
+ - AXLSQLToolkit (Download from your CUCM Plugins page https://developer.cisco.com/docs/axl/#!download-the-axl-wsdl/download-the-axl-wsdl)
  - suds-jurko Python3 library
  - A CUCM Environment (Installed on a VMWare Workstation is fine. I’m using v11.5 for testing)
- # axl-python-suds-sample
 
  # instructions
  - Setup a dcloud demo instance that contains the CUCM VM (title: Cisco Collaboration 12.5 v1 - Transform Work with Collaboration)
