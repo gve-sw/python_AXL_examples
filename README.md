@@ -1,5 +1,5 @@
 # python_AXL_examples
- tutorial on how to setup a CUCM dcloud environment and making SOAP/AXL calls using python
+ tutorial on how to setup an evironemt for making SOAP/AXL calls using python
 
  # first thing you’re going to need:
  - Python (I use v3.6)
