@@ -9,7 +9,8 @@
 
  # instructions
  - Setup a dcloud demo instance that contains the CUCM VM (title: Cisco Collaboration 12.5 v1 - Transform Work with Collaboration)
+ - Install the AXLSQLToolkit by going into CUCM admin page, Go to Application | Plugins. Click on the Download link by the Cisco CallManager AXL SQL Toolkit Plugin. The axlsqltoolkit.zip file contains the complete schema definition for different versions of Cisco Unified CM.
  - Copy user_env.template to user_env.py
- - Edit user_env.py and add your CUCM environment and user details
+ - Edit user_env.py and add your CUCM environment and user details WSDL_PATH = "(path to WSDL file)" CUCM_LOCATION = "(IP Address)" CUCM_USER = "(username without domain)" CUCM_PASSWORD = "(password)"
  - Install the suds-jurko Python3 library
  - Run one of the .py sample scripts
