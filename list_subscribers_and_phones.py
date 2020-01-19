@@ -58,18 +58,22 @@ axl = Client("file://"+user_env.WSDL_PATH,
     password=user_env.CUCM_PASSWORD)
                 
 def getSubs():
+    f= open("output.txt","w+")
     res = axl.service.listProcessNode({'name': '%', 'processNodeRole': 'CUCM Voice/Video'}, returnedTags={'name': ''})
     subs = res[1]['return']['processNode']
     for sub in subs:
         if sub.name != 'EnterpriseWideData':
+            #f.write(sub.name)
             print(sub.name)
 
 def listPhones():
-    res = axl.service.listPhone({'name': '%'}, returnedTags={'name': ''})
+    f= open("output.txt","w+")
+    res = axl.service.listPhone({'name': '%'}, returnedTags={'name': '', 'description': '','model': ''})
     if res[1]['return']:
         phones = res[1]['return']['phone']
         for phone in phones:
             if phone.name.startswith('SEP'): 
+                f.write("Name: " + phone.name + " " + "Model: " + phone.model + "\n")
                 print(phone.name)
 
 getSubs()
