@@ -6,6 +6,7 @@
  - AXLSQLToolkit (Download from your CUCM Plugins page https://developer.cisco.com/docs/axl/#!download-the-axl-wsdl/download-the-axl-wsdl)
  - suds-jurko Python3 library
  - A CUCM Environment (VMs included)
+ - VPN to be on the same network as CUCM 
 
  # instructions
  - Setup a dcloud demo instance that contains the CUCM VM (title: Cisco Collaboration 12.5 v1 - Transform Work with Collaboration is a good environment)
