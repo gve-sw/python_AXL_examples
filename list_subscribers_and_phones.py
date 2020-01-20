@@ -58,23 +58,145 @@ axl = Client("file://"+user_env.WSDL_PATH,
     password=user_env.CUCM_PASSWORD)
                 
 def getSubs():
-    f= open("output.txt","w+")
+    f= open("subs.txt","w+")
+
+    # edit returnedTags to receive different information
+
+    
     res = axl.service.listProcessNode({'name': '%', 'processNodeRole': 'CUCM Voice/Video'}, returnedTags={'name': ''})
     subs = res[1]['return']['processNode']
     for sub in subs:
         if sub.name != 'EnterpriseWideData':
-            #f.write(sub.name)
-            print(sub.name)
+            f.write(sub.name)
+    f.close()
 
 def listPhones():
-    f= open("output.txt","w+")
-    res = axl.service.listPhone({'name': '%'}, returnedTags={'name': '', 'description': '','model': ''})
+    f= open("output.csv","w+")
+
+    # edit returnedTags to receive different information
+    res = axl.service.listPhone({'name': '%'}, returnedTags={
+                'name': '', 'description': '','model': '','product': '',
+                'model': '',
+                'class': '',
+                'protocol': '',
+                'protocolSide': '',
+                'callingSearchSpaceName': '',
+                'devicePoolName': '',
+                'commonDeviceConfigName': '',
+                'commonPhoneConfigName': '',
+                'networkLocation': '',
+                'locationName': '',
+                'mediaResourceListName': '',
+                'networkHoldMohAudioSourceId': '',
+                'userHoldMohAudioSourceId': '',
+                'automatedAlternateRoutingCssName': '',
+                'aarNeighborhoodName': '',
+                'loadInformation': '',
+                'traceFlag': '',
+                'mlppIndicationStatus': '',
+                'preemption': '',
+                'useTrustedRelayPoint': '',
+                'retryVideoCallAsAudio': '',
+                'securityProfileName': '',
+                'sipProfileName': '',
+                'cgpnTransformationCssName': '',
+                'useDevicePoolCgpnTransformCss': '',
+                'geoLocationName': '',
+                'geoLocationFilterName': '',
+                'sendGeoLocation': '',
+                'numberOfButtons': '',
+                'phoneTemplateName': '',
+                'primaryPhoneName': '',
+                'ringSettingIdleBlfAudibleAlert': '',
+                'ringSettingBusyBlfAudibleAlert': '',
+                'userLocale': '',
+                'networkLocale': '',
+                'idleTimeout': '',
+                'authenticationUrl': '',
+                'directoryUrl': '',
+                'idleUrl': '',
+                'informationUrl': '',
+                'messagesUrl': '',
+                'proxyServerUrl': '',
+                'servicesUrl': '',
+                'softkeyTemplateName': '',
+                'loginUserId': '',
+                'defaultProfileName': '',
+                'enableExtensionMobility': '',
+                'currentProfileName': '',
+                'loginTime': '',
+                'loginDuration': '',
+                'currentConfig': '',
+                'singleButtonBarge': '',
+                'joinAcrossLines': '',
+                'builtInBridgeStatus': '',
+                'callInfoPrivacyStatus': '',
+                'hlogStatus': '',
+                'ownerUserName': '',
+                'ignorePresentationIndicators': '',
+                'packetCaptureMode': '',
+                'packetCaptureDuration': '',
+                'subscribeCallingSearchSpaceName': '',
+                'rerouteCallingSearchSpaceName': '',
+                'allowCtiControlFlag': '',
+                'presenceGroupName': '',
+                'unattendedPort': '',
+                'requireDtmfReception': '',
+                'rfc2833Disabled': '',
+                'certificateOperation': '',
+                'authenticationMode': '',
+                'keySize': '',
+                'keyOrder': '',
+                'ecKeySize': '',
+                'authenticationString': '',
+                'certificateStatus': '',
+                'upgradeFinishTime': '',
+                'deviceMobilityMode': '',
+                'roamingDevicePoolName': '',
+                'remoteDevice': '',
+                'dndOption': '',
+                'dndRingSetting': '',
+                'dndStatus': '',
+                'isActive': '',
+                'isDualMode': '',
+                'mobilityUserIdName': '',
+                'phoneSuite': '',
+                'phoneServiceDisplay': '',
+                'isProtected': '',
+                'mtpRequired': '',
+                'mtpPreferedCodec': '',
+                'dialRulesName': '',
+                'sshUserId': '',
+                'digestUser': '',
+                'outboundCallRollover': '',
+                'hotlineDevice': '',
+                'secureInformationUrl': '',
+                'secureDirectoryUrl': '',
+                'secureMessageUrl': '',
+                'secureServicesUrl': '',
+                'secureAuthenticationUrl': '',
+                'secureIdleUrl': '',
+                'alwaysUsePrimeLine': '',
+                'alwaysUsePrimeLineForVoiceMessage': '',
+                'featureControlPolicy': '',
+                'deviceTrustMode': '',
+                'earlyOfferSupportForVoiceCall': '',
+                'requireThirdPartyRegistration': '',
+                'blockIncomingCallsWhenRoaming': '',
+                'homeNetworkId': '',
+                'AllowPresentationSharingUsingBfcp': '',
+                'confidentialAccess': '',
+                'requireOffPremiseLocation': '',
+                'allowiXApplicableMedia': '',
+                'enableCallRoutingToRdWhenNoneIsActive': '',
+                })
+    f.write("Name," + "Model,"  + "Product,"  + "Location" + "\n")
     if res[1]['return']:
         phones = res[1]['return']['phone']
         for phone in phones:
             if phone.name.startswith('SEP'): 
-                f.write("Name: " + phone.name + " " + "Model: " + phone.model + "\n")
-                print(phone.name)
+                f.write( phone.name + ","  + phone.model + ","  + phone.product + "," + phone.locationName["value"] + "\n")
+    f.close()
 
 getSubs()
 listPhones()
