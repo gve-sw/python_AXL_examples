@@ -18,7 +18,10 @@
  - Run one of the .py sample scripts
  
  # code output
- - The listPhones() method will generate a CSV file that has Name,Model,Product,Location for each phone device. Use the returned tags as a reference to what information that can be retrieved. Example: phone.description is the description of the device. 
+ - The listPhones() function of the list_subscribers_and_phones.py script will generate a CSV file that has Name,Model,Product,Location for each phone device. Use the returned tags as a reference to what information that can be retrieved. Example: phone.description is the description of the device. 
  
- - The getSubs() method will generate a text file that has the name of the subscribers. 
- 
+ - The getSubs() function of the list_subscribers_and_phones.py script will generate a text file that has the name of the subscribers. 
+
+ - The listUsers() function of the list_users.py script will generate a CSV file that has First,Last,UserID for each user.
+
+ - The executeQuery() function of the list_devices_and_dns.py script will perform a SQL Query of the CUCM DB using AXL. There are various example queries in that script that return devices and their associated descriptions, device types and DNs that could be useful in extracting extension numbers (DNs) for specific types of devices
