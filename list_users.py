@@ -63,22 +63,32 @@ def listUsers():
 
     # edit returnedTags to receive different information
     res = axl.service.listUser({'userid': '%'}, returnedTags={
-                'firstName': '', 'lastName': '','userid': '',
+                'firstName': '', 'lastName': '','userid': '', 'telephoneNumber':'',  'mobileNumber':'', 'homeNumber':'',
                 })
-    f.write("First," + "Last,"  + "UserID"  + "\n")
+    f.write("First," + "Last,"  + "UserID," + "telephoneNumber,"+ "mobileNumber,"+ "homeNumber" + "\n")
     if res[1]['return']:
         users = res[1]['return']['user']
         for user in users:
             theFirst=''
             theLast=''
             theUserID=''
+            theTelephoneNumber=''
+            theMobileNumber=''
+            theHomeNumber=''
             if user.firstName:
                 theFirst=user.firstName
             if user.lastName:
                 theLast=user.lastName
             if user.userid:
-                theUserID=user.userid                
-            f.write( theFirst + ","  + theLast + ","  + theUserID + "\n")
+                theUserID=user.userid
+            if user.telephoneNumber:
+                theTelephoneNumber=user.telephoneNumber
+            if user.mobileNumber:
+                theMobileNumber=user.mobileNumber
+            if user.homeNumber:
+                theHomeNumber=user.homeNumber
+
+            f.write( theFirst + ","  + theLast + ","  + theUserID + ","+ theTelephoneNumber+ "," + theMobileNumber+ "," + theHomeNumber + "\n")
     f.close()
 
 
