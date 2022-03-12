@@ -31,3 +31,6 @@ Tutorial on how to setup an environment for making SOAP/AXL calls using python
  - The listUsers() function of the `list_users.py` script will generate a CSV file that has First, Last, UserID, telephoneNumber, mobileNumber, homeNumber for each user.  
 
  - The executeQuery() function of the `list_devices_and_dns.py` script will perform a SQL Query of the CUCM DB using AXL. There are various example queries in that script that return devices and their associated descriptions, device types and DNs that could be useful in extracting extension numbers (DNs) for specific types of devices  
+
+ - The executeQuery() function of the `list_users_to_be_deleted.py` script will perform a SQL Query of the CUCM DB using AXL to list all users marked for deletion
+ by AD sync and output the results to the `users_to_delete.csv` file. 
