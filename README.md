@@ -34,3 +34,6 @@ Tutorial on how to setup an environment for making SOAP/AXL calls using python
 
  - The executeQuery() function of the `list_users_to_be_deleted.py` script will perform a SQL Query of the CUCM DB using AXL to list all users marked for deletion
  by AD sync and output the results to the `users_to_delete.csv` file. 
+
+ - The listUsersDeviceProfileLines() function of the `list_users_device_profiles_lines.py` script will generate the `output_users_devprofiles_lines.csv` file that has First, Last, UserID, telephoneNumber, mobileNumber, homeNumber , deviceProfile and the number of lines configured in that deviceProfile for each user.  
+
